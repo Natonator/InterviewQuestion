@@ -1,0 +1,10 @@
+.form-group textarea{
+  width: 100%;
+  min-height: 200px;
+}
+
+.answers table{
+  display: block;
+  margin: auto;
+  width: 25%;
+}

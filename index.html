@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="letter-counter">
+  <head>
+    <meta charset="utf-8">
+    <title>Letter Counts</title>
+
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body ng-controller="CountController as countCtrl">
+    <div class="container">
+      <div class="text-center">
+        <h1>
+          Letter Counter
+        </h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form ng-submit="countCtrl.submit()">
+            <div class="form-group">
+              <textarea ng-model="countCtrl.text"></textarea>
+            </div>
+
+            <div class="form-group">
+              <input class="btn btn-primary pull-right" type="submit" name="submit">
+            </div>
+          </form>
+        </div><!-- col-md-6 -->
+        <div class="col-md-6 answers">
+          <table class="text-center">
+            <tr>
+              <th>Letter</th>
+              <th>Count</th>
+            </tr>
+
+            <tr ng-repeat="(letter, count) in countCtrl.letterList">
+              <td>{{letter}}</td>
+              <td>{{count}}</td>
+            </tr>
+
+          </table>
+        </div><!-- col-md-6 -->
+
+      </div><!-- row -->
+    </div><!-- container -->
+  </body>
+</html>
